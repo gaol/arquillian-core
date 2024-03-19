@@ -40,12 +40,12 @@ import org.jboss.arquillian.container.test.spi.client.deployment.ProtocolArchive
 import org.jboss.arquillian.container.test.spi.client.protocol.Protocol;
 import org.jboss.arquillian.core.api.Instance;
 import org.jboss.arquillian.core.api.InstanceProducer;
+import org.jboss.arquillian.core.api.annotation.ApplicationScoped;
 import org.jboss.arquillian.core.api.annotation.Inject;
 import org.jboss.arquillian.core.api.annotation.Observer;
 import org.jboss.arquillian.core.api.annotation.Observes;
 import org.jboss.arquillian.core.spi.ServiceLoader;
 import org.jboss.arquillian.test.spi.TestClass;
-import org.jboss.arquillian.test.spi.annotation.ClassScoped;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.container.ClassContainer;
 
@@ -60,7 +60,7 @@ public class DeploymentGenerator {
     private Instance<ServiceLoader> serviceLoader;
 
     @Inject
-    @ClassScoped
+    @ApplicationScoped
     private InstanceProducer<DeploymentScenario> deployment;
 
     @Inject
